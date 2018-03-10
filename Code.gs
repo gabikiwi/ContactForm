@@ -1,48 +1,15 @@
-function doPost(e) {
-  
-  var json =JSON.parse(e.postData.contents)
-  var response = sendMail({
-    name : json.name,
-    email : json.email,
-    subject : json.subject,
-    body : json.body   
-  })
-  
-  return ContentService.createTextOutput(JSON.stringify(response))
-    .setMimeType(ContentService.MimeType.JSON);
+function doGet() {
+return HtmlService.createHtmlOutputFromFile('index')
+.setSandboxMode(HtmlService.SandboxMode.IFRAME);
 }
 
+function doSomething(s1,s2,s3,s4,s5){
 
-function sendMail (data) {
-  try {    
-    var html = HtmlService.createTemplateFromFile('email');
-    html.name = data.name;
-    html.email = data.email;
-    html.subject = data.subject;
-    html.body = data.body;
-    
-    GmailApp.sendEmail('gabriel.chivoiu@gmail.com',data.subject + '[CONTACT FORM]', body, {
-                       name : 'Contat Form',
-                       replyTo : data.email,
-                       htmlBody : html.evaluate().getContent()
-                       
-                       });
-  return {
-    code : 'success',
-    msg: 'Multumim pentru email si vom lua in curand legatura cu dumneavoastra pentru a purta o discutie preliminara despre GDPR'
-    
-  }
-                     
-  }
-  
-  catch (err){
-    
-    return {
-    code : 'danger',
-    msg: 'Ceva nu a fost in regula'
-    
-  }
-  
-  }
-  
+Logger.log('data:'+s1+"  "+s2+"  "+s3+" "+s4+"  "+s5);
+var link="https://docs.google.com/spreadsheets/d/11lKwlTB_lTAogfUpnTFbUhtH5xt_GTda_GR3yS1EIrs/edit";
+var ss = SpreadsheetApp.getActiveSpreadsheet();
+var ss = SpreadsheetApp.openByUrl(link);
+var sheet = ss.getSheets()[0];
+sheet.appendRow([s1, s2, s3, s4, s5]);
+Logger.log(ss.getName());
 }

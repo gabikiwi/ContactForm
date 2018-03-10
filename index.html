@@ -1,0 +1,78 @@
+<html>
+<head>
+<base target="_top">
+
+  
+<script>
+var option 
+function submitFunction(){
+
+var s1=document.getElementById("name-company-field").value;
+var s2 = option
+console.log(option);
+var s3=document.getElementById("name-field").value;
+var s4=document.getElementById("email-field").value;
+var s5=document.getElementById("body-message-field").value;
+google.script.run.doSomething(s1,s2,s3,s4,s5);
+}
+
+function selectFunction() {
+            option = document.getElementById("subject-field").value;
+           console.log(option);
+}
+  
+</script>
+</head>
+
+<body>
+<div class="container">
+    <legend>Formular de contact Seers CRM</legend>
+
+    <div class="form-group col-xs-12">
+        <label for="name-company-field">nume companie</label>
+        <input type="text" class="form-control" id="name-company-field" name="name-company-field" placeholder="numele companiei Dumneavoastra"
+            required>
+    </div>
+
+    <div id="subject-select" class="form-group col-xs-12">
+        <label for="subject-field">GDPR</label>
+
+        <select class="form-control" id="subject-field" name="subject-field" onChange="selectFunction();" required>
+            <option value="Consulting">Servicii de consultanta</option>
+            <option value="Introducere GDPR">Introducere in GDPR</option>
+            <option value="Analiza de risc">Analiza de risc</option>
+            <option value="Analiza managment al datelor">Analiza managment al datelor</option>
+            <option value="Other">Altele</option>
+        </select>
+    </div>
+
+
+    <div class="form-group col-xs-6">
+        <label for="name-field">Nume</label>
+        <input type="text" class="form-control" id="name-field" name="name-field" placeholder="Your name" required>
+    </div>
+    <div class="form-group col-xs-6">
+        <label for="email-field">Email</label>
+        <input type="email" class="form-control" id="email-field" name="email-field" placeholder="Email address" required>
+    </div>
+
+
+    <div class="form-group col-xs-12">
+        <label for="body-field">mesaj</label>
+        <textarea id="body-message-field" name="body-message-field" class="form-control" placeholder="Scrieti un mesaj aici" required></textarea>
+    </div>
+
+
+
+
+
+    <button name="buttonTrimite" type="submit" class="btn btn-primary btn-lg btn-block" onClick="submitFunction();">Trimite</button>
+
+
+</div>
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+</body>
+
+</html>
+
+
