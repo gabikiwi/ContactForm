@@ -16,7 +16,7 @@ Give permisive permisions (anyone)
 
 Notes:
 Typical gmail accounts will allow you to publish the script with permision for everyone.
-If you are using more Google Accounts then you might not have rights to publish the scrpt as a webapp with access to everyone. 
+If you are using more Google Accounts, then you might not have rights to publish the script as a webapp with access to everyone. 
 
 @inspired by this guy Jordan Rhea 
 https://www.youtube.com/watch?v=bwU1MSLi33Q
