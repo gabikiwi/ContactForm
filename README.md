@@ -1,5 +1,5 @@
 # ContactForm
-This is a working webform which wirtes to a Google sheet using doGET() method from Google script.
+This is a working webform which writes to a Google sheet using doGET() method from Google script.
 
 1. Step:
 create a GSheet
